@@ -44,9 +44,11 @@ jobs:
 
       - name: Checkout OpenWrt
         uses: actions/checkout@v3
+        
       - name: Use custom .config file
         run: |
           cp ./.config .config
+          
       - name: Update feeds
         run: |
           sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
